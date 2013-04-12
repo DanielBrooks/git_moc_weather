@@ -1,0 +1,206 @@
+%html
+  %head
+    <meta charset="utf-8">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+
+    <title>Weather in MOC</title>
+
+    <link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+    <!--[if IE]>
+    <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+  %body
+    .wrapper
+      .header
+        .cities-block
+          %ul.cities-list
+            %li
+              %a.remove{:href=>""}
+              %a.city{:href=>""}
+                Cherkassy (Ukraine)
+            %li
+              %a.remove{:href=>""}
+              %a.city{:href=>""}
+                Manhattan (New York, USA)
+            %li
+              %a.remove{:href=>""}
+              %a.city{:href=>""}
+                Paris (France)
+            %li
+              %a.remove{:href=>""}
+              %a.city{:href=>""}
+                Paris (France)
+        
+        .wrap
+          .user-block
+            .photo-block
+              %img{:src=>"images/default_photo_32.png", :alt=>"Photo"}
+            %a.sign-in{:href=>""}
+              Sign In with Google
+            %span.name
+              Judah Musick
+            %a.logout{:href=>""}
+              Logout
+          
+          %a{:href=>"", :class=>"logo"}
+            %img{:src=>"images/logo.png", :alt=>"Logo"}
+          
+          .search-block
+            %form
+              .search
+                %button{:type=>"submit"}
+                %input{:type=>"text", :placeholder=>"Type location please"}
+            %p.examples
+              Examples:
+              %a{:href=>""}
+                New York,
+              %a{:href=>""}
+                Shanghai
+      
+      .content
+        .sources
+          %a{:href=>""}
+            %span.icon
+            Sources
+        
+        .map
+          <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=37.439974,-97.075195&amp;spn=18.112074,40.429687&amp;t=m&amp;z=5&amp;output=embed"></iframe>
+          
+        .weather
+          .wrap
+            .caption-block
+              
+              .switcher-block
+                %span.state-name
+                  Graphs
+                .switcher
+                  %a{:href=>"", :class=>"icon"}
+                %span.state-name
+                  Compiled
+              
+              %h1.caption
+                %span.icon
+                Weather summary for Cherkassy (Ukraine)
+              
+              %span.status
+                automaticaly detected
+            
+            -#%ul.forecast-list.list3
+            -#%ul.forecast-list.list4
+            -#%ul.forecast-list.list7
+            -#%ul.forecast-list.list14
+            %ul.forecast-list.list3
+              %li
+                .date-block
+                  %span.date
+                    April 4th
+                  %span.day
+                    Tuesday
+                .forecast-block
+                  %span.image.sun.sun-cloud.cloud.sun-rain.rain.sun-shower.shower.sun-thunderstorm.thunderstorm.sun-rain-snow.rain-snow.sun-rain-ice.rain-ice.sun-snow.snow
+                  %span.degrees
+                    +9&deg;C
+                  .air
+                    %span.pressure
+                      752mm
+                    %span.wind
+                      3m/s
+              %li
+                .date-block
+                  %span.date
+                    April 4th
+                  %span.day
+                    Tuesday
+                .forecast-block
+                  %span.image.moon.moon-cloud.moon-rain.moon-shower.moon-thunderstorm.moon-rain-snow.moon-rain-ice.moon-snow
+                  %span.degrees
+                    +9&deg;C
+                  .air
+                    %span.pressure
+                      752mm
+                    %span.wind
+                      3m/s
+              %li
+                .date-block
+                  %span.date
+                    April 4th
+                  %span.day
+                    Tuesday
+                .forecast-block
+                  %span.image.moon
+                  %span.degrees
+                    +9&deg;C
+                  .air
+                    %span.pressure
+                      752mm
+                    %span.wind
+                      3m/s
+          
+        %ul.nav
+          %li
+            %span.arrow
+            %a{:href=>""}
+              Actual Weather
+          %li
+            %span.arrow
+            %a{:href=>""}
+              Tomorrow
+          %li
+            %span.arrow
+            %a{:href=>""}
+              Next 3 Days
+          %li
+            %span.arrow
+            %a{:href=>""}
+              Weekend
+          %li.active
+            %span.arrow
+            %a{:href=>""}
+              Weekly Forecast
+          %li
+            %span.arrow
+            %a{:href=>""}
+              Long Term
+      
+      .footer
+        %ul.footer-nav
+          %li
+            %a{:href=>""}
+              Home
+          %li
+            %a{:href=>""}
+              About
+          %li
+            %a{:href=>""}
+              Mobile Apps
+          %li
+            %a{:href=>""}
+              Contact Information
+        
+        %span.copy
+          &copy; 2013 Master of Code LTD.
+          %br
+          All Rights Reserved
+
+
+
+
+
+
+
+
+
+
+
+
+
+
