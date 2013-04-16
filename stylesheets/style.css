@@ -298,23 +298,89 @@ select, input, textarea, input[type="password"], button {
 /* line 246, ../sass/style.scss */
 .content {
   position: relative;
+  padding: 19px 0 0;
 }
-/* line 249, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 .content .sources {
   background: #D6D6D6;
   border-top: 1px solid #C9C9C9;
-  height: 18px;
-  position: relative;
+  width: 100%;
+  padding: 18px 0 0;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: 5;
 }
-/* line 256, ../sass/style.scss */
-.content .sources a {
+/* line 261, ../sass/style.scss */
+.content .sources .wrap {
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-timing-function: ease-in;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-property: all;
+  -webkit-transition-delay: 0;
+  -moz-transition-timing-function: ease-in;
+  -moz-transition-duration: 0.3s;
+  -moz-transition-property: all;
+  -moz-transition-delay: 0;
+}
+/* line 267, ../sass/style.scss */
+.content .sources h2 {
+  font-size: 32px;
+  font-weight: normal;
+  color: #444;
+  text-align: center;
+  line-height: 1.2em;
+  padding: 18px 0 39px;
+}
+/* line 276, ../sass/style.scss */
+.content .sources .sources-list {
+  padding: 0 0 0 7px;
+}
+/* line 280, ../sass/style.scss */
+.content .sources .sources-list a {
   display: block;
-  position: relative;
+  width: 208px;
+  height: 36px;
+  border: 1px solid #B8B8B8;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #666;
+  text-shadow: 0 1px 0 #FFF;
+  text-align: center;
+  padding: 12px 0 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 294, ../sass/style.scss */
+.content .sources .sources-list a:hover {
+  background: #FFF;
+  border-color: #B9B9B9;
+}
+/* line 300, ../sass/style.scss */
+.content .sources .sources-list li {
+  float: left;
+  margin: 0 0 10px 10px;
+}
+/* line 306, ../sass/style.scss */
+.content .sources .sources-list li.active a {
+  background: #001D3A;
+  border-color: #FDFDFD;
+  color: #FFF;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.59);
+}
+/* line 315, ../sass/style.scss */
+.content .sources a.close-sources, .content .sources a.open-sources {
+  display: block;
   width: 96px;
   height: 24px;
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  margin: 0 0 0 -54px;
   padding: 2px 12px 0 0;
-  margin: 0 auto;
   color: #555;
   text-align: center;
   text-shadow: 0 1px 0 #FFF;
@@ -328,8 +394,8 @@ select, input, textarea, input[type="password"], button {
   -moz-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 270, ../sass/style.scss */
-.content .sources a .icon {
+/* line 331, ../sass/style.scss */
+.content .sources a.close-sources .icon, .content .sources a.open-sources .icon {
   width: 10px;
   height: 8px;
   display: block;
@@ -338,7 +404,59 @@ select, input, textarea, input[type="password"], button {
   right: 20px;
   background: url(../images/sprite_icons.png) 0 -120px no-repeat;
 }
-/* line 282, ../sass/style.scss */
+/* line 342, ../sass/style.scss */
+.content .sources a.close-sources {
+  display: none;
+}
+/* line 345, ../sass/style.scss */
+.content .sources a.close-sources:before, .content .sources a.close-sources:after {
+  display: block;
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: 10px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+}
+/* line 354, ../sass/style.scss */
+.content .sources a.close-sources:before {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 1px solid #B8B8B8;
+  border-right: 1px solid #B8B8B8;
+}
+/* line 360, ../sass/style.scss */
+.content .sources a.close-sources:after {
+  bottom: -2px;
+  right: -2px;
+  border-bottom: 1px solid #DFDFDF;
+  border-right: 1px solid #DFDFDF;
+}
+/* line 367, ../sass/style.scss */
+.content .sources a.close-sources .icon {
+  background-position: -10px -120px;
+}
+/* line 373, ../sass/style.scss */
+.content .sources.opened {
+  border-bottom: 1px solid #B8B8B8;
+  -webkit-box-shadow: 0 1px 0 #dfdfdf;
+  -moz-box-shadow: 0 1px 0 #dfdfdf;
+  box-shadow: 0 1px 0 #dfdfdf;
+}
+/* line 378, ../sass/style.scss */
+.content .sources.opened .wrap {
+  height: 452px;
+}
+/* line 382, ../sass/style.scss */
+.content .sources.opened a.open-sources {
+  display: none;
+}
+/* line 385, ../sass/style.scss */
+.content .sources.opened a.close-sources {
+  display: block;
+}
+/* line 390, ../sass/style.scss */
 .content .map {
   width: 100%;
   height: 400px;
@@ -347,19 +465,19 @@ select, input, textarea, input[type="password"], button {
   left: 0;
   top: inherit;
 }
-/* line 291, ../sass/style.scss */
+/* line 399, ../sass/style.scss */
 .content .weather {
   height: 400px;
   background: url(../images/bg_lines.png) repeat-x;
   position: relative;
   z-index: 1;
 }
-/* line 297, ../sass/style.scss */
+/* line 405, ../sass/style.scss */
 .content .weather .caption-block {
   padding: 23px 0 10px 10px;
   overflow: hidden;
 }
-/* line 301, ../sass/style.scss */
+/* line 409, ../sass/style.scss */
 .content .weather .caption-block .caption {
   font-size: 20px;
   color: #FFF;
@@ -369,7 +487,7 @@ select, input, textarea, input[type="password"], button {
   float: left;
   line-height: 1.2em;
 }
-/* line 310, ../sass/style.scss */
+/* line 418, ../sass/style.scss */
 .content .weather .caption-block .caption .icon {
   width: 16px;
   height: 16px;
@@ -379,7 +497,7 @@ select, input, textarea, input[type="password"], button {
   top: 6px;
   background: url(../images/sprite_icons.png) 0 -150px no-repeat;
 }
-/* line 321, ../sass/style.scss */
+/* line 429, ../sass/style.scss */
 .content .weather .caption-block .status {
   display: block;
   clear: both;
@@ -388,19 +506,19 @@ select, input, textarea, input[type="password"], button {
   opacity: 0.5;
   line-height: 1.2em;
 }
-/* line 330, ../sass/style.scss */
+/* line 438, ../sass/style.scss */
 .content .weather .caption-block .switcher-block {
   float: right;
   padding: 7px 0 0;
 }
-/* line 334, ../sass/style.scss */
+/* line 442, ../sass/style.scss */
 .content .weather .caption-block .switcher-block .state-name {
   color: #FFF;
   display: block;
   float: right;
   padding: 2px 0 0;
 }
-/* line 341, ../sass/style.scss */
+/* line 449, ../sass/style.scss */
 .content .weather .caption-block .switcher-block .switcher {
   border: 1px solid #FFF;
   position: relative;
@@ -412,7 +530,7 @@ select, input, textarea, input[type="password"], button {
   -moz-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 350, ../sass/style.scss */
+/* line 458, ../sass/style.scss */
 .content .weather .caption-block .switcher-block .switcher .icon {
   display: block;
   width: 14px;
@@ -430,19 +548,19 @@ select, input, textarea, input[type="password"], button {
   -moz-transition-property: all;
   -moz-transition-delay: 0;
 }
-/* line 360, ../sass/style.scss */
+/* line 468, ../sass/style.scss */
 .content .weather .caption-block .switcher-block .switcher .icon.graph {
   margin-left: 24px;
 }
 
-/* line 370, ../sass/style.scss */
+/* line 478, ../sass/style.scss */
 .nav {
   border-bottom: 1px solid #CDCDCD;
   text-align: center;
   height: 50px;
   font-size: 0;
   position: relative;
-  z-index: 5;
+  z-index: 4;
   margin: 0;
   -webkit-box-shadow: 0 1px 0 #e3e3e3;
   -moz-box-shadow: 0 1px 0 #e3e3e3;
@@ -453,21 +571,21 @@ select, input, textarea, input[type="password"], button {
   background-image: -o-linear-gradient(top, white, #e6e7e6);
   background-image: linear-gradient(top, #ffffff, #e6e7e6);
 }
-/* line 381, ../sass/style.scss */
+/* line 489, ../sass/style.scss */
 .nav li {
   display: inline-block;
   position: relative;
   border-right: 1px solid #FFF;
 }
-/* line 386, ../sass/style.scss */
+/* line 494, ../sass/style.scss */
 .nav li:first-child {
   border-left: 1px solid #D6D6D6;
 }
-/* line 389, ../sass/style.scss */
+/* line 497, ../sass/style.scss */
 .nav li:first-child a {
   border-left: 1px solid #FFF;
 }
-/* line 394, ../sass/style.scss */
+/* line 502, ../sass/style.scss */
 .nav li a {
   display: block;
   height: 34px;
@@ -479,7 +597,7 @@ select, input, textarea, input[type="password"], button {
   position: relative;
   text-shadow: 0 1px 0 #FFF;
 }
-/* line 405, ../sass/style.scss */
+/* line 513, ../sass/style.scss */
 .nav li a:before, .nav li a:after {
   display: none;
   position: absolute;
@@ -494,15 +612,15 @@ select, input, textarea, input[type="password"], button {
   -moz-box-shadow: 0 0 2px black;
   box-shadow: 0 0 2px black;
 }
-/* line 416, ../sass/style.scss */
+/* line 524, ../sass/style.scss */
 .nav li a:before {
   left: -10px;
 }
-/* line 419, ../sass/style.scss */
+/* line 527, ../sass/style.scss */
 .nav li a:after {
   right: -10px;
 }
-/* line 424, ../sass/style.scss */
+/* line 532, ../sass/style.scss */
 .nav li .arrow {
   display: none;
   position: absolute;
@@ -513,11 +631,11 @@ select, input, textarea, input[type="password"], button {
   border-color: transparent transparent #FFF;
   border-style: solid;
 }
-/* line 440, ../sass/style.scss */
+/* line 548, ../sass/style.scss */
 .nav li.active:first-child a {
   border-left: 1px solid #D6D6D6;
 }
-/* line 445, ../sass/style.scss */
+/* line 553, ../sass/style.scss */
 .nav li.active a {
   color: #444;
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.11);
@@ -526,37 +644,37 @@ select, input, textarea, input[type="password"], button {
   padding-left: 31px;
   padding-right: 31px;
 }
-/* line 453, ../sass/style.scss */
+/* line 561, ../sass/style.scss */
 .nav li.active a:before, .nav li.active a:after {
   display: block;
 }
-/* line 458, ../sass/style.scss */
+/* line 566, ../sass/style.scss */
 .nav li.active .arrow {
   display: block;
 }
 
-/* line 465, ../sass/style.scss */
+/* line 573, ../sass/style.scss */
 .footer {
   padding: 87px 0 148px;
 }
-/* line 468, ../sass/style.scss */
+/* line 576, ../sass/style.scss */
 .footer .footer-nav {
   text-align: center;
   font-size: 0;
 }
-/* line 472, ../sass/style.scss */
+/* line 580, ../sass/style.scss */
 .footer .footer-nav li {
   display: inline-block;
   padding: 0 9px;
   line-height: 1.2em;
 }
-/* line 477, ../sass/style.scss */
+/* line 585, ../sass/style.scss */
 .footer .footer-nav a {
   font-size: 14px;
   color: #777;
   line-height: 1.2em;
 }
-/* line 484, ../sass/style.scss */
+/* line 592, ../sass/style.scss */
 .footer .copy {
   display: block;
   text-align: center;
@@ -565,7 +683,7 @@ select, input, textarea, input[type="password"], button {
   padding: 28px 0 0;
 }
 
-/* line 497, ../sass/style.scss */
+/* line 605, ../sass/style.scss */
 .forecast-list li {
   float: left;
   background: #FFF;
@@ -575,173 +693,173 @@ select, input, textarea, input[type="password"], button {
   overflow: hidden;
   height: 300px;
 }
-/* line 504, ../sass/style.scss */
+/* line 612, ../sass/style.scss */
 .forecast-list li .date, .forecast-list li .day, .forecast-list li .image, .forecast-list li .degrees, .forecast-list li .pressure, .forecast-list li .wind {
   display: block;
 }
-/* line 509, ../sass/style.scss */
+/* line 617, ../sass/style.scss */
 .forecast-list .date-block {
   background: #F0F0F0;
   text-align: center;
 }
-/* line 514, ../sass/style.scss */
+/* line 622, ../sass/style.scss */
 .forecast-list .forecast-block {
   overflow: hidden;
 }
-/* line 517, ../sass/style.scss */
+/* line 625, ../sass/style.scss */
 .forecast-list .forecast-block .image, .forecast-list .forecast-block .degrees, .forecast-list .forecast-block .air {
   float: left;
 }
-/* line 520, ../sass/style.scss */
+/* line 628, ../sass/style.scss */
 .forecast-list .forecast-block .image {
   background: url(../images/sprite_weather_icons.png) no-repeat;
 }
-/* line 523, ../sass/style.scss */
+/* line 631, ../sass/style.scss */
 .forecast-list .forecast-block .degrees {
   color: #212121;
 }
-/* line 526, ../sass/style.scss */
+/* line 634, ../sass/style.scss */
 .forecast-list .forecast-block .air {
   font-size: 17px;
   color: #555;
   line-height: 1.5em;
 }
-/* line 531, ../sass/style.scss */
+/* line 639, ../sass/style.scss */
 .forecast-list .forecast-block .wind {
   padding: 0 0 0 18px;
   background: url(../images/sprite_icons.png) 0 -202px no-repeat;
 }
 
-/* line 539, ../sass/style.scss */
+/* line 647, ../sass/style.scss */
 .forecast-list.list3 {
   margin: 0 0 0 -30px;
 }
-/* line 543, ../sass/style.scss */
+/* line 651, ../sass/style.scss */
 .forecast-list.list3 li {
   width: 300px;
   margin: 0 0 0 30px;
 }
-/* line 547, ../sass/style.scss */
+/* line 655, ../sass/style.scss */
 .forecast-list.list3 .date {
   font-size: 39px;
   line-height: 1.2em;
   color: #001D39;
 }
-/* line 552, ../sass/style.scss */
+/* line 660, ../sass/style.scss */
 .forecast-list.list3 .day {
   font-size: 24px;
   color: #999;
   text-transform: uppercase;
   line-height: 0.8em;
 }
-/* line 559, ../sass/style.scss */
+/* line 667, ../sass/style.scss */
 .forecast-list.list3 .forecast-block {
   padding: 29px 0 32px 20px;
 }
-/* line 562, ../sass/style.scss */
+/* line 670, ../sass/style.scss */
 .forecast-list.list3 .image {
   margin: 0 15px 0 0;
 }
-/* line 566, ../sass/style.scss */
+/* line 674, ../sass/style.scss */
 .forecast-list.list3 .air {
   padding: 21px 0 0 13px;
 }
 
-/* line 574, ../sass/style.scss */
+/* line 682, ../sass/style.scss */
 .forecast-list.list3 .date-block, .forecast-list.list4 .date-block {
   padding: 15px 0 9px;
   border-bottom: 1px solid #EDEDED;
 }
-/* line 578, ../sass/style.scss */
+/* line 686, ../sass/style.scss */
 .forecast-list.list3 .image, .forecast-list.list4 .image {
   width: 160px;
   height: 157px;
 }
-/* line 582, ../sass/style.scss */
+/* line 690, ../sass/style.scss */
 .forecast-list.list3 .degrees, .forecast-list.list4 .degrees {
   font-size: 39px;
   line-height: 1.1em;
 }
 
-/* line 590, ../sass/style.scss */
+/* line 698, ../sass/style.scss */
 .forecast-list.list4 {
   margin: 0 0 0 -20px;
 }
-/* line 594, ../sass/style.scss */
+/* line 702, ../sass/style.scss */
 .forecast-list.list4 li {
   width: 225px;
   margin: 0 0 0 20px;
 }
-/* line 598, ../sass/style.scss */
+/* line 706, ../sass/style.scss */
 .forecast-list.list4 .date {
   display: none;
 }
-/* line 601, ../sass/style.scss */
+/* line 709, ../sass/style.scss */
 .forecast-list.list4 .day {
   font-size: 30px;
   color: #001D39;
   line-height: 1.1em;
 }
-/* line 606, ../sass/style.scss */
+/* line 714, ../sass/style.scss */
 .forecast-list.list4 .image {
   margin: 19px 32px 0;
 }
-/* line 609, ../sass/style.scss */
+/* line 717, ../sass/style.scss */
 .forecast-list.list4 .degrees {
   padding: 3px 0 0 32px;
   width: 104px;
 }
-/* line 613, ../sass/style.scss */
+/* line 721, ../sass/style.scss */
 .forecast-list.list4 .air {
   padding: 1px 0 0;
 }
 
-/* line 620, ../sass/style.scss */
+/* line 728, ../sass/style.scss */
 .forecast-list.list7, .forecast-list.list14 {
   margin: 0 0 0 -10px;
 }
-/* line 624, ../sass/style.scss */
+/* line 732, ../sass/style.scss */
 .forecast-list.list7 li, .forecast-list.list14 li {
   width: 128px;
   margin: 0 0 0 10px;
 }
-/* line 629, ../sass/style.scss */
+/* line 737, ../sass/style.scss */
 .forecast-list.list7 .image, .forecast-list.list14 .image {
   width: 81px;
   height: 79px;
 }
-/* line 633, ../sass/style.scss */
+/* line 741, ../sass/style.scss */
 .forecast-list.list7 .date-block, .forecast-list.list14 .date-block {
   padding: 8px 0 4px;
   border-bottom: 1px solid #D6D6D6;
 }
-/* line 637, ../sass/style.scss */
+/* line 745, ../sass/style.scss */
 .forecast-list.list7 .date, .forecast-list.list14 .date {
   font-size: 16px;
   line-height: 1em;
   color: #001D39;
 }
-/* line 642, ../sass/style.scss */
+/* line 750, ../sass/style.scss */
 .forecast-list.list7 .day, .forecast-list.list14 .day {
   text-transform: uppercase;
   line-height: 1em;
   color: #999;
   font-size: 12px;
 }
-/* line 649, ../sass/style.scss */
+/* line 757, ../sass/style.scss */
 .forecast-list.list7 .sun, .forecast-list.list14 .sun {
   background-position: -6px -1581px;
 }
-/* line 653, ../sass/style.scss */
+/* line 761, ../sass/style.scss */
 .forecast-list.list7 .image, .forecast-list.list7 .degrees, .forecast-list.list7 .air, .forecast-list.list14 .image, .forecast-list.list14 .degrees, .forecast-list.list14 .air {
   float: none;
 }
 
-/* line 661, ../sass/style.scss */
+/* line 769, ../sass/style.scss */
 .forecast-list.list7 .image {
   margin: 27px auto 0;
 }
-/* line 664, ../sass/style.scss */
+/* line 772, ../sass/style.scss */
 .forecast-list.list7 .degrees {
   border-top: 1px solid #EFEFEF;
   margin: 13px auto 0;
@@ -751,223 +869,223 @@ select, input, textarea, input[type="password"], button {
   line-height: 1.2em;
   padding: 16px 0 0;
 }
-/* line 673, ../sass/style.scss */
+/* line 781, ../sass/style.scss */
 .forecast-list.list7 .air {
   text-align: center;
   padding: 14px 0 0;
 }
-/* line 677, ../sass/style.scss */
+/* line 785, ../sass/style.scss */
 .forecast-list.list7 .wind {
   display: inline-block;
 }
 
-/* line 685, ../sass/style.scss */
+/* line 793, ../sass/style.scss */
 .forecast-list.list14 li {
   height: 150px;
   margin-bottom: 10px;
 }
-/* line 689, ../sass/style.scss */
+/* line 797, ../sass/style.scss */
 .forecast-list.list14 .image {
   margin: 4px auto 0;
 }
-/* line 692, ../sass/style.scss */
+/* line 800, ../sass/style.scss */
 .forecast-list.list14 .degrees {
   font-size: 24px;
   line-height: 0.8em;
   text-align: center;
 }
-/* line 697, ../sass/style.scss */
+/* line 805, ../sass/style.scss */
 .forecast-list.list14 .air {
   display: none;
 }
 
-/* line 705, ../sass/style.scss */
+/* line 813, ../sass/style.scss */
 .forecast-list.list3 .sun, .forecast-list.list4 .sun {
   background-position: 0px 0px;
 }
-/* line 708, ../sass/style.scss */
+/* line 816, ../sass/style.scss */
 .forecast-list.list3 .sun-cloud, .forecast-list.list4 .sun-cloud {
   background-position: -200px 0px;
 }
-/* line 711, ../sass/style.scss */
+/* line 819, ../sass/style.scss */
 .forecast-list.list3 .cloud, .forecast-list.list4 .cloud {
   background-position: -400px 0px;
 }
-/* line 714, ../sass/style.scss */
+/* line 822, ../sass/style.scss */
 .forecast-list.list3 .sun-rain, .forecast-list.list4 .sun-rain {
   background-position: -600px 0px;
 }
-/* line 717, ../sass/style.scss */
+/* line 825, ../sass/style.scss */
 .forecast-list.list3 .rain, .forecast-list.list4 .rain {
   background-position: -800px 0px;
 }
-/* line 720, ../sass/style.scss */
+/* line 828, ../sass/style.scss */
 .forecast-list.list3 .sun-shower, .forecast-list.list4 .sun-shower {
   background-position: -1000px 0px;
 }
-/* line 723, ../sass/style.scss */
+/* line 831, ../sass/style.scss */
 .forecast-list.list3 .shower, .forecast-list.list4 .shower {
   background-position: -1200px 0px;
 }
-/* line 726, ../sass/style.scss */
+/* line 834, ../sass/style.scss */
 .forecast-list.list3 .sun-thunderstorm, .forecast-list.list4 .sun-thunderstorm {
   background-position: -200px -200px;
 }
-/* line 729, ../sass/style.scss */
+/* line 837, ../sass/style.scss */
 .forecast-list.list3 .thunderstorm, .forecast-list.list4 .thunderstorm {
   background-position: -400px -200px;
 }
-/* line 732, ../sass/style.scss */
+/* line 840, ../sass/style.scss */
 .forecast-list.list3 .sun-rain-snow, .forecast-list.list4 .sun-rain-snow {
   background-position: -600px -200px;
 }
-/* line 735, ../sass/style.scss */
+/* line 843, ../sass/style.scss */
 .forecast-list.list3 .rain-snow, .forecast-list.list4 .rain-snow {
   background-position: -800px -200px;
 }
-/* line 738, ../sass/style.scss */
+/* line 846, ../sass/style.scss */
 .forecast-list.list3 .sun-rain-ice, .forecast-list.list4 .sun-rain-ice {
   background-position: -1000px -200px;
 }
-/* line 741, ../sass/style.scss */
+/* line 849, ../sass/style.scss */
 .forecast-list.list3 .rain-ice, .forecast-list.list4 .rain-ice {
   background-position: -1200px -200px;
 }
-/* line 744, ../sass/style.scss */
+/* line 852, ../sass/style.scss */
 .forecast-list.list3 .sun-snow, .forecast-list.list4 .sun-snow {
   background-position: -200px -400px;
 }
-/* line 747, ../sass/style.scss */
+/* line 855, ../sass/style.scss */
 .forecast-list.list3 .snow, .forecast-list.list4 .snow {
   background-position: -400px -400px;
 }
-/* line 751, ../sass/style.scss */
+/* line 859, ../sass/style.scss */
 .forecast-list.list3 .moon, .forecast-list.list4 .moon {
   background-position: 0px -600px;
 }
-/* line 754, ../sass/style.scss */
+/* line 862, ../sass/style.scss */
 .forecast-list.list3 .moon-cloud, .forecast-list.list4 .moon-cloud {
   background-position: -200px -600px;
 }
-/* line 757, ../sass/style.scss */
+/* line 865, ../sass/style.scss */
 .forecast-list.list3 .moon-rain, .forecast-list.list4 .moon-rain {
   background-position: -400px -600px;
 }
-/* line 760, ../sass/style.scss */
+/* line 868, ../sass/style.scss */
 .forecast-list.list3 .moon-shower, .forecast-list.list4 .moon-shower {
   background-position: -600px -600px;
 }
-/* line 763, ../sass/style.scss */
+/* line 871, ../sass/style.scss */
 .forecast-list.list3 .moon-thunderstorm, .forecast-list.list4 .moon-thunderstorm {
   background-position: -200px -800px;
 }
-/* line 766, ../sass/style.scss */
+/* line 874, ../sass/style.scss */
 .forecast-list.list3 .moon-rain-snow, .forecast-list.list4 .moon-rain-snow {
   background-position: -400px -800px;
 }
-/* line 769, ../sass/style.scss */
+/* line 877, ../sass/style.scss */
 .forecast-list.list3 .moon-rain-ice, .forecast-list.list4 .moon-rain-ice {
   background-position: -600px -800px;
 }
-/* line 772, ../sass/style.scss */
+/* line 880, ../sass/style.scss */
 .forecast-list.list3 .moon-snow, .forecast-list.list4 .moon-snow {
   background-position: -800px -800px;
 }
 
-/* line 779, ../sass/style.scss */
+/* line 887, ../sass/style.scss */
 .forecast-list.list7 .sun, .forecast-list.list14 .sun {
   background-position: 0px -1000px;
 }
-/* line 782, ../sass/style.scss */
+/* line 890, ../sass/style.scss */
 .forecast-list.list7 .sun-cloud, .forecast-list.list14 .sun-cloud {
   background-position: -200px -1000px;
 }
-/* line 785, ../sass/style.scss */
+/* line 893, ../sass/style.scss */
 .forecast-list.list7 .cloud, .forecast-list.list14 .cloud {
   background-position: -400px -1000px;
 }
-/* line 788, ../sass/style.scss */
+/* line 896, ../sass/style.scss */
 .forecast-list.list7 .sun-rain, .forecast-list.list14 .sun-rain {
   background-position: -600px -1000px;
 }
-/* line 791, ../sass/style.scss */
+/* line 899, ../sass/style.scss */
 .forecast-list.list7 .rain, .forecast-list.list14 .rain {
   background-position: -800px -1000px;
 }
-/* line 794, ../sass/style.scss */
+/* line 902, ../sass/style.scss */
 .forecast-list.list7 .sun-shower, .forecast-list.list14 .sun-shower {
   background-position: -1000px -1000px;
 }
-/* line 797, ../sass/style.scss */
+/* line 905, ../sass/style.scss */
 .forecast-list.list7 .shower, .forecast-list.list14 .shower {
   background-position: -1200px -1000px;
 }
-/* line 800, ../sass/style.scss */
+/* line 908, ../sass/style.scss */
 .forecast-list.list7 .sun-thunderstorm, .forecast-list.list14 .sun-thunderstorm {
   background-position: -200px -1100px;
 }
-/* line 803, ../sass/style.scss */
+/* line 911, ../sass/style.scss */
 .forecast-list.list7 .thunderstorm, .forecast-list.list14 .thunderstorm {
   background-position: -400px -1100px;
 }
-/* line 806, ../sass/style.scss */
+/* line 914, ../sass/style.scss */
 .forecast-list.list7 .sun-rain-snow, .forecast-list.list14 .sun-rain-snow {
   background-position: -600px -1100px;
 }
-/* line 809, ../sass/style.scss */
+/* line 917, ../sass/style.scss */
 .forecast-list.list7 .rain-snow, .forecast-list.list14 .rain-snow {
   background-position: -800px -1100px;
 }
-/* line 812, ../sass/style.scss */
+/* line 920, ../sass/style.scss */
 .forecast-list.list7 .sun-rain-ice, .forecast-list.list14 .sun-rain-ice {
   background-position: -1000px -1100px;
 }
-/* line 815, ../sass/style.scss */
+/* line 923, ../sass/style.scss */
 .forecast-list.list7 .rain-ice, .forecast-list.list14 .rain-ice {
   background-position: -1200px -1100px;
 }
-/* line 818, ../sass/style.scss */
+/* line 926, ../sass/style.scss */
 .forecast-list.list7 .sun-snow, .forecast-list.list14 .sun-snow {
   background-position: -200px -1200px;
 }
-/* line 821, ../sass/style.scss */
+/* line 929, ../sass/style.scss */
 .forecast-list.list7 .snow, .forecast-list.list14 .snow {
   background-position: -400px -1200px;
 }
-/* line 825, ../sass/style.scss */
+/* line 933, ../sass/style.scss */
 .forecast-list.list7 .moon, .forecast-list.list14 .moon {
   background-position: 0px -1300px;
 }
-/* line 828, ../sass/style.scss */
+/* line 936, ../sass/style.scss */
 .forecast-list.list7 .moon-cloud, .forecast-list.list14 .moon-cloud {
   background-position: -200px -1300px;
 }
-/* line 831, ../sass/style.scss */
+/* line 939, ../sass/style.scss */
 .forecast-list.list7 .moon-rain, .forecast-list.list14 .moon-rain {
   background-position: -400px -1300px;
 }
-/* line 834, ../sass/style.scss */
+/* line 942, ../sass/style.scss */
 .forecast-list.list7 .moon-shower, .forecast-list.list14 .moon-shower {
   background-position: -600px -1300px;
 }
-/* line 837, ../sass/style.scss */
+/* line 945, ../sass/style.scss */
 .forecast-list.list7 .moon-thunderstorm, .forecast-list.list14 .moon-thunderstorm {
   background-position: -200px -1400px;
 }
-/* line 840, ../sass/style.scss */
+/* line 948, ../sass/style.scss */
 .forecast-list.list7 .moon-rain-snow, .forecast-list.list14 .moon-rain-snow {
   background-position: -400px -1400px;
 }
-/* line 843, ../sass/style.scss */
+/* line 951, ../sass/style.scss */
 .forecast-list.list7 .moon-rain-ice, .forecast-list.list14 .moon-rain-ice {
   background-position: -600px -1400px;
 }
-/* line 846, ../sass/style.scss */
+/* line 954, ../sass/style.scss */
 .forecast-list.list7 .moon-snow, .forecast-list.list14 .moon-snow {
   background-position: -800px -1400px;
 }
 
-/* line 853, ../sass/style.scss */
+/* line 961, ../sass/style.scss */
 .white-icon {
   display: block;
   width: 50px;
@@ -975,95 +1093,95 @@ select, input, textarea, input[type="password"], button {
   background: url(../images/sprite_weather_icons.png) no-repeat;
 }
 
-/* line 860, ../sass/style.scss */
+/* line 968, ../sass/style.scss */
 .white-icons-list .sun {
   background-position: 0px -1500px;
 }
-/* line 863, ../sass/style.scss */
+/* line 971, ../sass/style.scss */
 .white-icons-list .sun-cloud {
   background-position: -200px -1500px;
 }
-/* line 866, ../sass/style.scss */
+/* line 974, ../sass/style.scss */
 .white-icons-list .cloud {
   background-position: -400px -1500px;
 }
-/* line 869, ../sass/style.scss */
+/* line 977, ../sass/style.scss */
 .white-icons-list .sun-rain {
   background-position: -600px -1500px;
 }
-/* line 872, ../sass/style.scss */
+/* line 980, ../sass/style.scss */
 .white-icons-list .rain {
   background-position: -800px -1500px;
 }
-/* line 875, ../sass/style.scss */
+/* line 983, ../sass/style.scss */
 .white-icons-list .sun-shower {
   background-position: -1000px -1500px;
 }
-/* line 878, ../sass/style.scss */
+/* line 986, ../sass/style.scss */
 .white-icons-list .shower {
   background-position: -1200px -1500px;
 }
-/* line 881, ../sass/style.scss */
+/* line 989, ../sass/style.scss */
 .white-icons-list .sun-thunderstorm {
   background-position: -200px -1600px;
 }
-/* line 884, ../sass/style.scss */
+/* line 992, ../sass/style.scss */
 .white-icons-list .thunderstorm {
   background-position: -400px -1600px;
 }
-/* line 887, ../sass/style.scss */
+/* line 995, ../sass/style.scss */
 .white-icons-list .sun-rain-snow {
   background-position: -600px -1600px;
 }
-/* line 890, ../sass/style.scss */
+/* line 998, ../sass/style.scss */
 .white-icons-list .rain-snow {
   background-position: -800px -1600px;
 }
-/* line 893, ../sass/style.scss */
+/* line 1001, ../sass/style.scss */
 .white-icons-list .sun-rain-ice {
   background-position: -1000px -1600px;
 }
-/* line 896, ../sass/style.scss */
+/* line 1004, ../sass/style.scss */
 .white-icons-list .rain-ice {
   background-position: -1200px -1600px;
 }
-/* line 899, ../sass/style.scss */
+/* line 1007, ../sass/style.scss */
 .white-icons-list .sun-snow {
   background-position: -200px -1700px;
 }
-/* line 902, ../sass/style.scss */
+/* line 1010, ../sass/style.scss */
 .white-icons-list .snow {
   background-position: -400px -1700px;
 }
-/* line 906, ../sass/style.scss */
+/* line 1014, ../sass/style.scss */
 .white-icons-list .moon {
   background-position: 0px -1800px;
 }
-/* line 909, ../sass/style.scss */
+/* line 1017, ../sass/style.scss */
 .white-icons-list .moon-cloud {
   background-position: -200px -1800px;
 }
-/* line 912, ../sass/style.scss */
+/* line 1020, ../sass/style.scss */
 .white-icons-list .moon-rain {
   background-position: -400px -1800px;
 }
-/* line 915, ../sass/style.scss */
+/* line 1023, ../sass/style.scss */
 .white-icons-list .moon-shower {
   background-position: -600px -1800px;
 }
-/* line 918, ../sass/style.scss */
+/* line 1026, ../sass/style.scss */
 .white-icons-list .moon-thunderstorm {
   background-position: -200px -1900px;
 }
-/* line 921, ../sass/style.scss */
+/* line 1029, ../sass/style.scss */
 .white-icons-list .moon-rain-snow {
   background-position: -400px -1900px;
 }
-/* line 924, ../sass/style.scss */
+/* line 1032, ../sass/style.scss */
 .white-icons-list .moon-rain-ice {
   background-position: -600px -1900px;
 }
-/* line 927, ../sass/style.scss */
+/* line 1035, ../sass/style.scss */
 .white-icons-list .moon-snow {
   background-position: -800px -1900px;
 }

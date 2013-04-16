@@ -9,9 +9,12 @@
     <link href="stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="stylesheets/coda-slider.css" rel="stylesheet" />
     <link href="stylesheets/style.css" rel="stylesheet" />
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.coda-slider-3.0.js"></script>
     <script src="js/main.js"></script>
   </head>
   <body>
@@ -84,16 +87,158 @@
       </div>
       <div class='content'>
         <div class='sources'>
-          <a href=''>
+          <a class='open-sources' href='' id='open-sources'>
             <span class='icon'></span>
             Sources
           </a>
+          <a class='close-sources' href='' id='close-sources'>
+            <span class='icon'></span>
+            Hide
+          </a>
+          <div class='wrap'>
+            <h2>Select Forecast Sourses</h2>
+            <div class='coda-slider' id='forecast-slider'>
+              <div>
+                <span class='tab-title'></span>
+                <ul class='sources-list'>
+                  <li class='active'>
+                    <a href=''>Google</a>
+                  </li>
+                  <li class='active'>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li class='active'>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li class='active'>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span class='tab-title'></span>
+                <ul class='sources-list'>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span class='tab-title'></span>
+                <ul class='sources-list'>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span class='tab-title'></span>
+                <ul class='sources-list'>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                  <li>
+                    <a href=''>Google</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
         <div class='map'>
           <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&amp;ll=37.439974,-97.075195&amp;spn=18.112074,40.429687&amp;t=m&amp;z=5&amp;output=embed"></iframe>
         </div>
-        <div class='weather white-icons-list'>
-          <span class='test sun sun-cloud cloud sun-rain rain sun-shower shower sun-thunderstorm thunderstorm sun-rain-snow rain-snow sun-rain-ice rain-ice sun-snow snow'></span>
+        <div class='weather'>
           <div class='wrap'>
             <div class='caption-block'>
               <div class='switcher-block'>
