@@ -80,6 +80,10 @@ select, input, textarea, input[type="password"], button {
   -moz-transition-duration: $time;
   -moz-transition-property: all;
   -moz-transition-delay: 0;  
+  -moz-transition-timing-function: ease-in;
+  -moz-transition-duration: $time;
+  -moz-transition-property: all;
+  -moz-transition-delay: 0;  
 }
 /*----------------------------------------------------------------------------------*/
 /*------------------------------------> Header <------------------------------------*/
